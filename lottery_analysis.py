@@ -1,22 +1,23 @@
 from random import choice
 
-my_number = 51
+lottery = [99, 51, 2, 3, 54, 17, 8, 10, 100, 69]
+
+choice1 = choice(lottery)
+choice2 = choice(lottery)
+choice3 = choice(lottery)
+
+lottery_winners = [choice1, choice2, choice3]
+
+my_ticket = 51
 count = 0
-lottery = [99,51,2,3]
-
-while True:
-	choice1 = choice(lottery)
-	choice2 = choice(lottery)
-	choice3 = choice(lottery)
-
-	lottery_winners = [choice1, choice2, choice3]
-
+while my_ticket != lottery_winners:
 	for number in lottery_winners:
-		if number != my_number:
-			count += 1
-			print("No match, better luck next time.")
-		else:
+		if number == my_ticket:
 			break
+		else:
+			count += 1
+			continue
 
-print(f"{my_number} has been chosen!")
-print(f"It only took {count} tries!")
+
+print(f"And the winning ticket number is {my_ticket}! Congratulations!")
+print(f"It took {count} number of iterations to get this match!")
